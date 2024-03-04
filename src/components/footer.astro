@@ -1,7 +1,8 @@
 ---
-import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import footerImage from "~/assets/background.png";
 
 const links: Array<FooterLink> = [
   {
@@ -29,7 +30,13 @@ const links: Array<FooterLink> = [
 
 <footer class="relative flex h-64 items-center justify-center">
   <div class="absolute inset-0 overflow-hidden opacity-40">
-    <HeroImage />
+    <Image
+    class="h-full w-full object-cover"
+    src={footerImage}
+    widths={[450, 800, 1200]}
+    sizes={"100vw"}
+    alt="The ridged surface of the moon"
+  />
   </div>
   <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
     {

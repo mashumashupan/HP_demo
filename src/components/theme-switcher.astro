@@ -1,3 +1,6 @@
+---
+import { Icon } from "astro-icon/components";
+---
 
 <!--
   negative margin is sum of button width (6) and gap size of flex parent (6)
@@ -9,9 +12,11 @@
   class="-ml-12 origin-[right_center] scale-0 transition-all duration-500"
 >
   <div id="icon-theme-light">
+    <Icon name="mdi:white-balance-sunny" class="size-6" />
     <span class="sr-only">Use light theme</span>
   </div>
   <div id="icon-theme-dark" class="hidden">
+    <Icon name="mdi:weather-night" class="size-6" />
     <span class="sr-only">Use dark theme</span>
   </div>
 </button>

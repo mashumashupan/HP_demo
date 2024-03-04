@@ -6,11 +6,17 @@ import Intro from "~/components/intro.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
+import { Image } from "astro:assets";
+import image1 from "~/assets/image1.png";
+import image2 from "~/assets/image2.png";
+import image3 from "~/assets/image3.png";
+import background_image from "~/assets/background.png";
+
 const { generator } = Astro;
 const site = 'https://hp-demo.vercel.app';
 const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "main text";
 ---
 
 <!doctype html>
@@ -21,7 +27,7 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Astro Landing Page</title>
+    <title>Top Page</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
@@ -56,13 +62,124 @@ const description =
         });
     </script>
   </head>
-  <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-  >
+  <body class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white">
     <Header />
-    <Splash />
+    <!-- <Splash src={image1}/> -->
+    
     <div class="space-y-24 px-8 py-32">
-      <Intro />
+      <!-- <Intro /> -->
+      <!-- <Features /> -->
+    <div class="flex overflow-hidden relative flex-col items-center min-h-[5730px]">
+      <Image alt="background_image"
+        loading="lazy"
+        src={background_image}
+        class="object-cover absolute inset-0 size-full"
+      />
+      <div class="flex relative gap-5 justify-between self-stretch pr-20 mt-1 w-full text-center whitespace-nowrap max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
+        <Image alt="image1"
+          loading="lazy"
+          src={image1}
+          class="flex-1 w-full aspect-[0.74] max-md:max-w-full"
+        />
+        <div class="flex flex-col my-auto basis-0">
+          <div class="text-9xl tracking-widest text-black leading-[52.48px] max-md:text-4xl">
+            TITLE
+          </div>
+          <div class="self-center mt-36 text-6xl leading-[58.24px] text-neutral-600 max-md:mt-10 max-md:text-4xl">
+            subtitle
+          </div>
+        </div>
+      </div>
+      <div class="flex relative flex-col items-center px-5 mt-44 w-full text-center whitespace-nowrap max-w-[1629px] text-neutral-600 max-md:mt-10 max-md:max-w-full">
+        <div class="text-9xl tracking-widest text-black leading-[52.48px] max-md:text-4xl">
+          TITLE
+        </div>
+        <div class="mt-60 text-4xl tracking-widest leading-[52px] max-md:mt-10">
+          text
+        </div>
+        <div class="mt-40 text-4xl tracking-widest leading-[52px] max-md:mt-10">
+          text
+        </div>
+        <div class="flex gap-5 justify-between self-stretch mt-[530px] max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+          <div class="flex flex-col self-start mt-44 basis-0 max-md:mt-10">
+            <div class="text-6xl leading-[58.24px] max-md:text-4xl">
+              subtitle
+            </div>
+            <div class="self-center mt-40 text-4xl tracking-widest leading-[52px] max-md:mt-10">
+              text
+            </div>
+          </div>
+          <Image alt="image2"
+            loading="lazy"
+            src={image2}
+            class="flex-1 w-full aspect-[1.49] max-md:max-w-full"
+          />
+        </div>
+      </div>
+      <div class="flex relative gap-5 justify-between mt-56 w-full text-center whitespace-nowrap max-w-[1563px] text-neutral-600 max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+        <Image alt="image3"
+          loading="lazy"
+          src={image3}
+          class="w-full aspect-[0.8] max-md:max-w-full"
+        />
+        <div class="flex flex-col self-start mt-64 max-md:mt-10">
+          <div class="text-6xl leading-[58.24px] max-md:text-4xl">
+            subtitle
+          </div>
+          <div class="self-center mt-52 text-4xl tracking-widest leading-[52px] max-md:mt-10">
+            text
+          </div>
+        </div>
+      </div>
+      <div class="flex relative flex-col px-14 pb-12 mt-96 max-w-full bg-white w-[1060px] max-md:px-5 max-md:mt-10">
+        <div class="max-md:max-w-full">
+          <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+            <div class="flex flex-col w-3/5 max-md:ml-0 max-md:w-full">
+              <Image alt="image2"
+                loading="lazy"
+                src={image2}
+                class="grow w-full aspect-[1.49] max-md:mt-10 max-md:max-w-full"
+              />
+            </div>
+            <div class="flex flex-col ml-5 w-2/5 max-md:ml-0 max-md:w-full">
+              <div class="flex flex-col mt-7 whitespace-nowrap max-md:mt-10">
+                <div class="flex gap-5 justify-between">
+                  <div class="flex flex-col flex-1 self-start mt-2.5">
+                    <div class="self-center text-6xl text-center leading-[58.24px] text-neutral-600 max-md:text-4xl">
+                      title
+                    </div>
+                    <div class="mt-4 text-2xl leading-6 text-neutral-600">
+                      トナーローション
+                    </div>
+                  </div>
+                  <div class="w-px border-r border-solid border-r-zinc-300 h-[140px]" />
+                  <div class="flex-auto self-end mt-20 text-4xl text-center leading-[58.4px] text-neutral-600 max-md:mt-10">
+                    100g
+                  </div>
+                </div>
+                <div class="shrink-0 mt-1.5 h-px border-b border-solid border-b-zinc-300" />
+                <div class="flex gap-5 justify-between mt-24 ml-5 w-64 max-w-full max-md:mt-10 max-md:ml-2.5">
+                  <div class="self-start mt-3.5 text-xl leading-5 font-[350] text-neutral-600">
+                    通常価格
+                  </div>
+                  <div class="flex-auto text-4xl text-center leading-[58.4px] text-neutral-600">
+                    3990円
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden relative flex-col justify-center items-center self-center px-16 py-10 mt-14 mb-9 max-w-full text-5xl tracking-widest leading-6 text-center text-white whitespace-nowrap font-[350] min-h-[119px] w-[684px] max-md:px-5 max-md:mt-10 max-md:text-4xl">
+          <!-- <Image alt=""
+            loading="lazy"
+            src={}
+            class="object-cover absolute inset-0 size-full"
+          /> -->
+          <!-- <button></button> -->
+          定期購入はこちら
+        </div>
+      </div>
     </div>
     <Footer />
   </body>
