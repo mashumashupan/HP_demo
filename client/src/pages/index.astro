@@ -17,6 +17,20 @@ const site = 'https://hp-demo.vercel.app';
 const image = new URL("social.jpg", site);
 const description =
   "main text";
+const API_URL = import.meta.env.API_URL;
+const API_TOKEN = import.meta.env.API_TOKEN;
+console.log(API_URL, API_TOKEN);
+
+await fetch(`${API_URL}/api/restaurants`, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${API_TOKEN}`,
+  },
+})
+  .then(response => response.json())
+  .then(data => console.log(data));
+
 ---
 
 <!doctype html>
